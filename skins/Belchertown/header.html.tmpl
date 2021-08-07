@@ -84,7 +84,7 @@
         <link rel='stylesheet' href='$relative_url/custom.css?ver=#echo int( time.time() ) #' type='text/css' media='all' id="belchertownCustomStyle" />
         #end if
         
-        <link rel="manifest" href="$relative_url/manifest.json" crossorigin="use-credentials">
+        <link rel="manifest" href="$relative_url/manifest.json">
         <link rel="apple-touch-icon" href="$relative_url/images/station.png">
         <link rel="apple-touch-icon" sizes="48x48" href="$relative_url/images/station48.png">
         <link rel="apple-touch-icon" sizes="72x72" href="$relative_url/images/station72.png">
@@ -105,7 +105,6 @@
         <script type='text/javascript' src='//code.highcharts.com/stock/highstock.js'></script>
         <script type='text/javascript' src='//code.highcharts.com/highcharts-more.js'></script>
         <script type='text/javascript' src='//code.highcharts.com/modules/exporting.js'></script>
-        <script type='text/javascript' src='//code.highcharts.com/modules/solid-gauge.js'></script>
         <script type='text/javascript' src='//stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
         <script type='text/javascript' src='$relative_url/js/belchertown.js?#echo int( time.time() )#'></script>
         #if $page == "pi"
@@ -145,10 +144,6 @@
             gtag('js', new Date());
             gtag('config', '$Extras.googleAnalyticsId');
         </script>
-        #end if
-
-        #if os.path.exists("header.inc")
-        #include "header.inc"
         #end if
 
     </head>
