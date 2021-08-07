@@ -33,9 +33,9 @@ tooltip_date_format = "LLL"
 
 [homepage]
     # Chart Timespan Defaults
-    title = "Homepage"
+    title = "Início"
     show_button = true
-    button_text = "Homepage"
+    button_text = "Início"
     time_length = today
     tooltip_date_format = "LLL"
     gapsize = 300 # This should be your archive_interval from weewx.conf
