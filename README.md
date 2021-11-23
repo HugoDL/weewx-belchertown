@@ -162,6 +162,10 @@ A sample `weewx-MQTT` extension config is below. Update the `server_url`, `topic
 #### Install your own MQTT Broker
 If you want to run your own MQTT broker, you can [follow these instructions that I've put together](https://obrienlabs.net/go/mqttbroker). 
 
+Setting up an MQTT server on DigitalOcean is quick and easy. BelchertownWeather.com runs on DigitalOcean. Click this **referral** link to get started on DigitalOcean with a free credit!
+
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=f79cac0e591d&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+
 #### Use a Public Broker
 These public brokers have been tested as working with MQTT and Websockets. If you have others to add the to the list, let me know.
 
@@ -209,6 +213,7 @@ If your weewx version is 3.9.1 or newer, to change your site to metric you would
                 group_altitude = meter
                 group_degree_day = degree_C_day
                 group_pressure = mbar
+                group_distance = km
                 group_rain = mm
                 group_rainrate = mm_per_hour
                 group_speed = meter_per_second
@@ -344,6 +349,8 @@ For ease of readability I have broken them out into separate tables. However you
 | mqtt_websockets_enabled | 0 | Set to 1 to enable the real-time streaming website updates from your MQTT Websockets broker (server). **Versions 0.8.2 and prior** this option is called `mqtt_enabled`
 | mqtt_websockets_host | "" | The MQTT broker hostname or IP. **Versions 0.8.2 and prior** this option is called `mqtt_host`
 | mqtt_websockets_port | 8080 | The port of the MQTT broker's **Websockets** port. Check your broker's documentation. **Versions 0.8.2 and prior** this option is called `mqtt_port`
+| mqtt_websockets_username | None | user name to connect to the MQTT broker (if required)
+| mqtt_websockets_password | None | password to connect to the MQTT broker (if required)
 | mqtt_websockets_ssl | 0 | Set to 1 if your broker is using SSL. **Versions 0.8.2 and prior** this option is called `mqtt_ssl`
 | mqtt_websockets_topic | "" | The topic to subscribe to for your weather data. Typically this should end in `/loop`. (e.g. `weather/loop`) depending on your [MQTT] extension settings.  **Versions 0.8.2 and prior** this option is called `mqtt_topic`
 | disconnect_live_website_visitor | 1800000 | The number of seconds after a visitor has loaded your page that we disconnect them from the live streaming updates. The idea here is to save your broker from a streaming connection that never ends. Time is in milliseconds. 0 = disabled. 300000 = 5 minutes. 1800000 = 30 minutes
